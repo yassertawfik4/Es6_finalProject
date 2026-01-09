@@ -34,18 +34,23 @@ setInterval(() => {
 }, 3000);
 ////////////////////////////////////////////////////////////////////////////////////////
 let productContainer = document.getElementById("productContainer");
+let allProducts = [];
+
 function getProductData() {
   fetch("./productData/Product.json")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      displayProducts(data.products);
+      allProducts = data.products;
+      displayProducts(allProducts);
+      setupFilterListeners();
     });
 }
 
 getProductData();
 
 function displayProducts(products) {
+  productContainer.innerHTML = "";
   products.forEach((product) => {
     productContainer.innerHTML += `
       <div class="my-3">
@@ -92,4 +97,39 @@ function displayProducts(products) {
         </div>
     `;
   });
+}
+
+function setupFilterListeners() {
+  const filterCheckboxes = document.querySelectorAll(".filter");
+  filterCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", filterProducts);
+  });
+  const resetBtn = document.getElementById("resetBtn");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", resetFilters);
+  }
+}
+
+function resetFilters() {
+  const filterCheckboxes = document.querySelectorAll(".filter");
+  filterCheckboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+  displayProducts(allProducts);
+}
+
+function filterProducts() {
+  const filterCheckboxes = document.querySelectorAll(".filter:checked");
+  const selectedCategories = Array.from(filterCheckboxes).map((checkbox) =>
+    checkbox.getAttribute("data-category")
+  );
+
+  if (selectedCategories.length === 0) {
+    displayProducts(allProducts);
+  } else {
+    const filteredProducts = allProducts.filter((product) =>
+      selectedCategories.includes(product.category)
+    );
+    displayProducts(filteredProducts);
+  }
 }
