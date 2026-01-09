@@ -15,7 +15,7 @@
             "description": "Noise-cancelling headphones with 20-hour battery life.",
             "price": 89.99,
             "category": "Electronics",
-            "image": "../imgs/productImgs/05694002055ce015521ae046635abda90bad5cb1.png",
+            "image": "../imgs/productImgs/103bb3e7beb86aa093cc86b44a447720cdb5dc0a.png",
             "stock": 15
         },
         {
@@ -24,7 +24,7 @@
             "description": "A sleek smartwatch with fitness tracking and notifications.",
             "price": 199.99,
             "category": "Wearables",
-            "image": "../imgs/productImgs/05694002055ce015521ae046635abda90bad5cb1.png",
+            "image": "../imgs/productImgs/1b08f49db0c792b9258a18b67dc87554a6b8dd09.png",
             "stock": 10
         },
         {
@@ -33,7 +33,7 @@
             "description": "Mechanical keyboard with customizable RGB lighting.",
             "price": 59.99,
             "category": "Electronics",
-            "image": "../imgs/productImgs/05694002055ce015521ae046635abda90bad5cb1.png",
+            "image": "../imgs/productImgs/2d9d57d725c96bad6b8bf769514e5e411adeaeb1.png",
             "stock": 25
         },
         {
@@ -42,7 +42,7 @@
             "description": "27-inch 4K UHD monitor with vibrant colors and sharp details.",
             "price": 329.99,
             "category": "Electronics",
-            "image": "../imgs/productImgs/05694002055ce015521ae046635abda90bad5cb1.png",
+            "image": "../imgs/productImgs/3e4c34b3efb3978e228e032730b40798c08795cc.png",
             "stock": 8
         },
         {
@@ -51,8 +51,63 @@
             "description": "2TB portable external hard drive for all your storage needs.",
             "price": 79.99,
             "category": "Storage",
-            "image": "../imgs/productImgs/05694002055ce015521ae046635abda90bad5cb1.png",
+            "image": "../imgs/productImgs/67adc26ac307065325d5a2cd73a421808af5eac9.png",
+            "stock": 30
+        },
+        {
+            "id": 7,
+            "name": "External Hard Drive",
+            "description": "2TB portable external hard drive for all your storage needs.",
+            "price": 79.99,
+            "category": "Storage",
+            "image": "../imgs/productImgs/84781702c7b281713480b6e76751d3d9fc4c75b6.png",
+            "stock": 30
+        },
+        {
+            "id": 8,
+            "name": "External Hard Drive",
+            "description": "2TB portable external hard drive for all your storage needs.",
+            "price": 79.99,
+            "category": "Storage",
+            "image": "../imgs/productImgs/b3529860baa7583b6afe7950228b36bcd992ffc9.png",
+            "stock": 30
+        },
+        {
+            "id": 9,
+            "name": "External Hard Drive",
+            "description": "2TB portable external hard drive for all your storage needs.",
+            "price": 79.99,
+            "category": "Storage",
+            "image": "../imgs/productImgs/be3aad8dba84584c6f009bc8d1ca0bb24ceef66d.png",
+            "stock": 30
+        },
+        {
+            "id": 10,
+            "name": "External Hard Drive",
+            "description": "2TB portable external hard drive for all your storage needs.",
+            "price": 79.99,
+            "category": "Storage",
+            "image": "../imgs/productImgs/c0680bd9dabafc4da8700cdb76033a4e7fea7d34.png",
+            "stock": 30
+        },
+        {
+            "id": 11,
+            "name": "External Hard Drive",
+            "description": "2TB portable external hard drive for all your storage needs.",
+            "price": 79.99,
+            "category": "Storage",
+            "image": "../imgs/productImgs/c33ab30ec803d2eef72f7750632c27b313ffdac9.png",
+            "stock": 30
+        },
+        {
+            "id": 12,
+            "name": "External Hard Drive",
+            "description": "2TB portable external hard drive for all your storage needs.",
+            "price": 79.99,
+            "category": "Storage",
+            "image": "../imgs/productImgs/c7d14ae21602a7d10fe847aa32ecfa3776301d6b.png",
             "stock": 30
         }
+        
     ]
 }
