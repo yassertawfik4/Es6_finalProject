@@ -1,0 +1,58 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Wireless Mouse",
+            "description": "A smooth and responsive wireless mouse with ergonomic design.",
+            "price": 25.99,
+            "category": "Electronics",
+            "image": "../imgs/productImgs/05694002055ce015521ae046635abda90bad5cb1.png",
+            "stock": 20
+        },
+        {
+            "id": 2,
+            "name": "Bluetooth Headphones",
+            "description": "Noise-cancelling headphones with 20-hour battery life.",
+            "price": 89.99,
+            "category": "Electronics",
+            "image": "../imgs/productImgs/05694002055ce015521ae046635abda90bad5cb1.png",
+            "stock": 15
+        },
+        {
+            "id": 3,
+            "name": "Smartwatch",
+            "description": "A sleek smartwatch with fitness tracking and notifications.",
+            "price": 199.99,
+            "category": "Wearables",
+            "image": "../imgs/productImgs/05694002055ce015521ae046635abda90bad5cb1.png",
+            "stock": 10
+        },
+        {
+            "id": 4,
+            "name": "Gaming Keyboard",
+            "description": "Mechanical keyboard with customizable RGB lighting.",
+            "price": 59.99,
+            "category": "Electronics",
+            "image": "../imgs/productImgs/05694002055ce015521ae046635abda90bad5cb1.png",
+            "stock": 25
+        },
+        {
+            "id": 5,
+            "name": "4K Monitor",
+            "description": "27-inch 4K UHD monitor with vibrant colors and sharp details.",
+            "price": 329.99,
+            "category": "Electronics",
+            "image": "../imgs/productImgs/05694002055ce015521ae046635abda90bad5cb1.png",
+            "stock": 8
+        },
+        {
+            "id": 6,
+            "name": "External Hard Drive",
+            "description": "2TB portable external hard drive for all your storage needs.",
+            "price": 79.99,
+            "category": "Storage",
+            "image": "../imgs/productImgs/05694002055ce015521ae046635abda90bad5cb1.png",
+            "stock": 30
+        }
+    ]
+}
