@@ -51,11 +51,12 @@ getProductData();
 
 function displayProducts(products) {
   productContainer.innerHTML = "";
+
   products.forEach((product) => {
     productContainer.innerHTML += `
       <div class="my-3">
               <div
-                class="bg-[#FEF5FD] w-full h-[250px] rounded-4xl flex items-center justify-center p-6"
+                class="bg-[#FEF5FD] w-full h-[250px] rounded-4xl flex items-center justify-center p-6 shadow-sm"
               >
                 <img
                   class="w-full h-[150px] object-contain"
@@ -74,7 +75,8 @@ function displayProducts(products) {
                   </div>
                   <div class="mt-5">
                     <button
-                      class="bg-[#FEF5FD] p-3 shadow-sm rounded-xl cursor-pointer"
+                    id="product-${product.id}"
+                      class="bg-[#FEF5FD] p-3 shadow-sm rounded-xl cursor-pointer outline-none"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +100,32 @@ function displayProducts(products) {
     `;
   });
 }
+productContainer.addEventListener("click", (e) => {
+  const btn = e.target.closest("button[id^='product-']");
+  if (!btn) return;
 
+  const productId = btn.id.replace("product-", "");
+  const selectedProduct = allProducts.find((p) => p.id == productId);
+
+  if (selectedProduct) {
+    addToCart(selectedProduct);
+  }
+});
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const exists = cart.find((p) => p.id == product.id);
+  if (exists) {
+    exists.quantity = (exists.quantity || 1) + 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  console.log("Product added to cart:", product);
+  console.log("Cart now:", cart);
+  // Notify user
+  alert(`${product.name} has been added to your cart.`);
+}
 function setupFilterListeners() {
   const filterCheckboxes = document.querySelectorAll(".filter");
   filterCheckboxes.forEach((checkbox) => {
@@ -133,3 +160,5 @@ function filterProducts() {
     displayProducts(filteredProducts);
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////////////
