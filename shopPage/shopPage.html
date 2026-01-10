@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap"
       rel="stylesheet"
     />
-
     <!-- Tailwind CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
@@ -125,69 +123,58 @@
           <div id="productContainershop" class=""></div>
         </div>
       </div>
-      <div class="w-[350px] flex flex-col bg-white rounded-2xl shadow-lg p-8">
-        <!-- Promo Banner -->
-        <div class="mb-8">
-          <div
-            class="bg-gradient-to-r from-[#B6349A] to-[#9d2a85] h-1 rounded-full mb-4"
-          ></div>
-          <p class="text-gray-700 text-sm">
-            <span class="font-semibold text-[#B6349A]">Free delivery</span> +
-            saving <span class="font-bold">$3.00</span> on this order
-          </p>
-        </div>
-
-        <!-- Order Summary -->
-        <div class="mb-8">
-          <h3 class="text-2xl font-bold text-gray-800 mb-6">Order Summary</h3>
-
-          <div class="space-y-4 mb-6">
-            <!-- Items Total -->
-            <div class="flex justify-between items-center">
-              <span class="text-gray-600">Items total</span>
-              <span id="itemsTotal" class="font-semibold text-gray-800"
+      <div class="w-[600px] flex flex-col justify-center items-center">
+        <div class="w-[450px] bg-white rounded-2xl shadow-lg p-8">
+          <div class="mb-8">
+            <div
+              class="bg-gradient-to-r from-[#B6349A] to-[#9d2a85] h-1 rounded-full mb-4"
+            ></div>
+            <p class="text-gray-700 text-sm">
+              <span class="font-semibold text-[#B6349A]">Free delivery</span> +
+              saving <span class="font-bold">$3.00</span> on this order
+            </p>
+          </div>
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Order Summary</h3>
+            <div class="space-y-4 mb-6">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600">Items total</span>
+                <span id="itemsTotal" class="font-semibold text-gray-800"
+                  >$0.00</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600">Delivery fee</span>
+                <span class="font-semibold text-gray-800">$0.00</span>
+              </div>
+            </div>
+            <div class="border-b border-gray-200 mb-6"></div>
+            <div class="flex justify-between items-center mb-6">
+              <span class="text-lg font-bold text-gray-800">Subtotal</span>
+              <span id="subtotalAmount" class="text-lg font-bold text-gray-800"
                 >$0.00</span
               >
             </div>
-
-            <!-- Delivery Fee -->
-            <div class="flex justify-between items-center">
-              <span class="text-gray-600">Delivery fee</span>
-              <span class="font-semibold text-gray-800">$0.00</span>
-            </div>
-          </div>
-
-          <!-- Divider -->
-          <div class="border-b border-gray-200 mb-6"></div>
-
-          <!-- Subtotal -->
-          <div class="flex justify-between items-center mb-6">
-            <span class="text-lg font-bold text-gray-800">Subtotal</span>
-            <span id="subtotalAmount" class="text-lg font-bold text-gray-800"
-              >$0.00</span
+            <button
+              id="checkoutBtn"
+              class="w-full bg-gradient-to-r from-[#B6349A] to-[#9d2a85] text-white py-4 rounded-full font-bold text-lg hover:shadow-lg transition duration-300 cursor-pointer flex items-center justify-between px-6"
             >
+              <span class="flex items-center gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  class="w-5 h-5"
+                >
+                  <path
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                  />
+                </svg>
+                Checkout
+              </span>
+              <span id="checkoutAmount" class="font-bold">$0.00</span>
+            </button>
           </div>
-
-          <!-- Checkout Button -->
-          <button
-            id="checkoutBtn"
-            class="w-full bg-gradient-to-r from-[#B6349A] to-[#9d2a85] text-white py-4 rounded-full font-bold text-lg hover:shadow-lg transition duration-300 cursor-pointer flex items-center justify-between px-6"
-          >
-            <span class="flex items-center gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                class="w-5 h-5"
-              >
-                <path
-                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
-                />
-              </svg>
-              Checkout
-            </span>
-            <span id="checkoutAmount" class="font-bold">$0.00</span>
-          </button>
         </div>
       </div>
     </div>

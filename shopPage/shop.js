@@ -23,7 +23,7 @@ function displayProducts() {
           />
         </div>
         <div>
-          <h3 class="font-medium text-gray-800">${product.name}</h3>
+                <h5 class="font-medium text-[14px] my-3 mx-2 cursor-pointer hover:text-[#B6349A] transition duration-300 product-name" data-product-id="${product.id}">${product.name}</h5>
           <p class="mt-3 text-md font-bold text-[#B6349A]">$${product.price}</p>
         </div>
       </div>
@@ -49,6 +49,24 @@ function displayProducts() {
     btn.addEventListener("click", () => {
       const id = btn.getAttribute("data-id");
       removeFromCart(id);
+    });
+  });
+
+  // Handle product name click for details page
+  const productNames = document.querySelectorAll(".product-name");
+  productNames.forEach((nameEl) => {
+    nameEl.addEventListener("click", () => {
+      const productId = nameEl.getAttribute("data-product-id");
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const selectedProduct = cart.find((p) => p.id == productId);
+
+      if (selectedProduct) {
+        localStorage.setItem(
+          "selectedProduct",
+          JSON.stringify(selectedProduct)
+        );
+        window.location.href = "../productPage/productDetails.html";
+      }
     });
   });
 }
@@ -86,36 +104,28 @@ function updateCheckoutSummary() {
 
 function checkout() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
   if (cart.length === 0) {
     alert("Your cart is empty!");
     return;
   }
-
   let itemsTotal = 0;
-
   cart.forEach((product) => {
     itemsTotal += product.price * product.quantity;
   });
-
   const deliveryFee = 0.0;
   const subtotal = itemsTotal + deliveryFee;
-
   localStorage.removeItem("cart");
   alert(
     `✓ Order Confirmed!\n\nTotal: $${subtotal.toFixed(
       2
     )}\n\nThank you for your purchase!`
   );
-
   displayProducts();
   updateCheckoutSummary();
 }
-
 let checkoutBtn = document.getElementById("checkoutBtn");
 if (checkoutBtn) {
   checkoutBtn.addEventListener("click", checkout);
 }
-
 displayProducts();
 updateCheckoutSummary();

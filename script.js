@@ -65,7 +65,7 @@ function displayProducts(products) {
                 />
               </div>
               <div>
-                <h5 class="font-medium text-[14px] my-3 mx-2">${product.name}</h5>
+                <h5 class="font-medium text-[14px] my-3 mx-2 cursor-pointer hover:text-[#B6349A] transition duration-300 product-name" data-product-id="${product.id}">${product.name}</h5>
                 <div class="flex justify-between items-center mx-2">
                   <div class="mt-6">
                     <p class="font-semibold">$${product.price}</p>
@@ -101,6 +101,17 @@ function displayProducts(products) {
   });
 }
 productContainer.addEventListener("click", (e) => {
+  const productName = e.target.closest(".product-name");
+  if (productName) {
+    const productId = productName.getAttribute("data-product-id");
+    const selectedProduct = allProducts.find((p) => p.id == productId);
+    if (selectedProduct) {
+      localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
+      window.location.href = "./productPage/productDetails.html";
+    }
+    return;
+  }
+
   const btn = e.target.closest("button[id^='product-']");
   if (!btn) return;
 
@@ -123,7 +134,6 @@ function addToCart(product) {
   localStorage.setItem("cart", JSON.stringify(cart));
   console.log("Product added to cart:", product);
   console.log("Cart now:", cart);
-  // Notify user
   alert(`${product.name} has been added to your cart.`);
 }
 function setupFilterListeners() {
